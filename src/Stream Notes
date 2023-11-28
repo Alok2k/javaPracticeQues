@@ -31,3 +31,10 @@ ____________________
 Example: Collecting elements into a List.
 List<String> collectedList = myList.stream()
                                   .collect(Collectors.toList());
+
+________________________________________________________________________________________
+To understand what flattening a stream consists in, consider a
+structure like [ [1,2,3],[4,5,6],[7,8,9] ] which has "two levels".
+ It's basically a big List containing three more List.
+  Flattening this means transforming it in a "one level" structure
+   e.g. [ 1,2,3,4,5,6,7,8,9 ] i.e. just one list.

@@ -1,7 +1,7 @@
 package streamAPI;
 
 import java.util.HashMap;
-
+//filter products with value more than 400 and increasing their value by 50-
 public class products {
     public static void main(String[] args) {
         HashMap<String,Integer> prod=new HashMap<>();
@@ -11,7 +11,5 @@ public class products {
         prod.put("Asus",2500);
 
         prod.entrySet().stream().filter(e->e.getValue()>400).map(e->e.getValue()+50).forEach(System.out::println);
-
-
     }
 }
