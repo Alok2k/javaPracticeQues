@@ -1,4 +1,5 @@
 package HackerRank;
+
 import java.util.*;
 
 class Student{
@@ -20,17 +21,28 @@ class Student{
     public double getCgpa() {
         return cgpa;
     }
+
+
 }
 
-class CGPAcom  implements Comparator<Student>{
-    public int compare(Student s1,Student s2){
-        if(s1.getCgpa()==s2.getCgpa())
-            return 0;
-        else if(s1.getCgpa()>s2.getCgpa())
-            return -1;
-        else return 1;
+//Complete the code
+class Sortres implements Comparator<Student>{
+    public int compare(Student a, Student b){
+        if(a.getCgpa()==b.getCgpa()){
+            if(a.getFname().equals(b.getFname()))
+                return (a.getId()<b.getId() ?1:-1);
+            else
+                return a.getFname().compareTo(b.getFname());
+        }
+        else{
+            return(a.getCgpa()<b.getCgpa()?1:-1);
+        }
     }
+
 }
+
+
+
 
 public class ComparatorQues
 {
@@ -50,13 +62,14 @@ public class ComparatorQues
             testCases--;
         }
 
+        Sortres sorting=new Sortres();
+        Collections.sort(studentList,sorting);
+
+
         for(Student st: studentList){
             System.out.println(st.getFname());
         }
     }
-
-    //Complete the code
-
 }
 
 
